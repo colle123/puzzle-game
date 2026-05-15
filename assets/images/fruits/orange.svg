@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="오렌지">
+  <rect width="128" height="128" rx="28" fill="#fff7ef"/>
+  <circle cx="64" cy="70" r="38" fill="#ff9b2f"/>
+  <circle cx="64" cy="70" r="31" fill="#ffab45"/>
+  <ellipse cx="52" cy="56" rx="10" ry="7" fill="#ffd3a1" opacity=".55" transform="rotate(-28 52 56)"/>
+  <path d="M62 29c10-9 22-11 33-7-8 8-19 12-31 11-4 0-5-1-2-4Z" fill="#58a55c"/>
+  <path d="M64 31c0-8 4-15 10-20 2 8 1 15-5 22Z" fill="#6b3f1d"/>
+</svg>

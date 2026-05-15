@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="바나나">
+  <rect width="128" height="128" rx="28" fill="#fff7ef"/>
+  <path d="M99 25c4 16-4 40-26 58-20 17-42 22-57 17 4 9 13 15 25 17 20 3 43-7 62-23 19-16 28-39 24-58-1-6-4-10-8-11-6-1-17-2-20 0Z" fill="#ffd84d"/>
+  <path d="M98 25c3 11-6 33-24 48-18 15-38 20-50 16" fill="none" stroke="#f0b800" stroke-linecap="round" stroke-width="7"/>
+  <path d="M96 21c4-1 10 0 12 5 2 5 0 11-4 13-5 1-8-2-9-7-1-4-1-10 1-11Z" fill="#8a5a22"/>
+  <path d="M20 100c5 3 8 8 7 12-2 5-11 6-16 2-3-2-3-7 0-10 2-3 5-4 9-4Z" fill="#8a5a22"/>
+</svg>

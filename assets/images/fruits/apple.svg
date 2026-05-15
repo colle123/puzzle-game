@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="사과">
+  <defs>
+    <linearGradient id="appleBody" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ff7a6b"/>
+      <stop offset="1" stop-color="#d92c2c"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#fff7ef"/>
+  <path d="M66 24c1-9 10-15 19-16-1 10-8 17-18 18 0-1-1-1-1-2Z" fill="#6b3f1d"/>
+  <path d="M66 24c8-9 18-12 30-8-4 8-12 13-23 13-3 0-5-1-7-5Z" fill="#58a55c"/>
+  <path d="M65 35c-18-9-41 1-48 20-10 28 8 62 30 62 8 0 12-4 18-4s10 4 18 4c21 0 40-33 31-60-7-21-31-32-49-22Z" fill="url(#appleBody)"/>
+  <ellipse cx="48" cy="59" rx="11" ry="22" fill="#ffb1a8" opacity=".45" transform="rotate(18 48 59)"/>
+</svg>

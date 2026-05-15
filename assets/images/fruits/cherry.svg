@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="체리">
+  <rect width="128" height="128" rx="28" fill="#fff7ef"/>
+  <path d="M47 72c-8-16-6-36 8-52 2-2 5-2 7 0 2 2 2 5 0 7-10 12-13 28-8 41Z" fill="#5aa85d"/>
+  <path d="M81 72c8-16 6-36-8-52-2-2-5-2-7 0-2 2-2 5 0 7 10 12 13 28 8 41Z" fill="#5aa85d"/>
+  <path d="M64 34c10-11 24-16 39-14-8 11-20 18-35 20-5 0-6-2-4-6Z" fill="#69ba6d"/>
+  <circle cx="46" cy="82" r="19" fill="#d72d3f"/>
+  <circle cx="82" cy="82" r="19" fill="#c92035"/>
+  <ellipse cx="40" cy="74" rx="5" ry="9" fill="#f48796" opacity=".45" transform="rotate(18 40 74)"/>
+  <ellipse cx="76" cy="74" rx="5" ry="9" fill="#ef7a8a" opacity=".4" transform="rotate(18 76 74)"/>
+</svg>
