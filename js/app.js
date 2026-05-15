@@ -3,10 +3,18 @@ import {
   createDeck,
   getGoalText,
   getProgressText,
+  getTimerText,
   getTipText,
   updateMessage
 } from "./game.js";
-import { FLIP_BACK_DELAY, FRUITS, TOTAL_PAIRS, shuffle } from "./utils.js";
+import {
+  BOARD_COLUMNS,
+  FLIP_BACK_DELAY,
+  GAME_DURATION_SECONDS,
+  FRUITS,
+  TOTAL_PAIRS,
+  shuffle
+} from "./utils.js";
 
 const restartButton = document.getElementById("restart-button");
 
@@ -15,22 +23,51 @@ const state = {
   flippedIndexes: [],
   matchedPairs: 0,
   attemptCount: 0,
-  isBoardLocked: false
+  isBoardLocked: false,
+  timeRemaining: GAME_DURATION_SECONDS,
+  timerId: null
 };
 
 let resetTimerId = null;
 
-function drawScreen() {
-  renderBoard(state, TOTAL_PAIRS, flipCard);
+function updateGuideDisplay() {
   updateGuide(
     getGoalText(state.matchedPairs, TOTAL_PAIRS),
     getProgressText(state, TOTAL_PAIRS),
-    getTipText(state.matchedPairs)
+    getTipText(state.matchedPairs, TOTAL_PAIRS, state.timeRemaining),
+    getTimerText(state.timeRemaining)
   );
 }
 
+function drawScreen() {
+  renderBoard(state, TOTAL_PAIRS, BOARD_COLUMNS, flipCard);
+  updateGuideDisplay();
+}
+
+function stopTimers() {
+  if (resetTimerId) {
+    window.clearTimeout(resetTimerId);
+    resetTimerId = null;
+  }
+
+  if (state.timerId) {
+    window.clearInterval(state.timerId);
+    state.timerId = null;
+  }
+}
+
 function finishGame() {
-  updateMessage(`축하합니다! ${state.attemptCount}번 만에 모든 과일 페어를 완성했습니다.`);
+  stopTimers();
+  updateMessage(`축하합니다. ${state.attemptCount}번 만에 모든 과일 짝을 맞췄어요.`);
+  drawScreen();
+}
+
+function gameOver() {
+  stopTimers();
+  state.timeRemaining = 0;
+  state.flippedIndexes = [];
+  state.isBoardLocked = true;
+  updateMessage("시간 초과예요. 게임 다시 시작 버튼을 눌러 다시 도전해 보세요.");
   drawScreen();
 }
 
@@ -38,22 +75,27 @@ function resetOpenCards() {
   state.flippedIndexes = [];
   state.isBoardLocked = false;
   resetTimerId = null;
-  updateMessage("다른 카드였습니다. 위치를 기억해 두고 다시 도전해 보세요.");
+  updateMessage("서로 다른 카드예요. 방금 본 위치를 기억하고 다시 도전해 보세요.");
   drawScreen();
 }
 
 function flipCard(index) {
   const card = state.cards[index];
 
-  if (state.isBoardLocked || state.flippedIndexes.includes(index) || card.matched) {
+  if (
+    state.isBoardLocked ||
+    state.timeRemaining <= 0 ||
+    state.flippedIndexes.includes(index) ||
+    card.matched
+  ) {
     return;
   }
 
   state.flippedIndexes.push(index);
   updateMessage(
     state.flippedIndexes.length === 1
-      ? "첫 번째 카드를 확인했습니다. 같은 과일 카드를 한 장 더 찾아보세요."
-      : "두 번째 카드를 확인했습니다. 같은 과일인지 비교하고 있습니다."
+      ? "첫 번째 카드를 열었어요. 같은 과일 카드를 찾아보세요."
+      : "두 번째 카드를 열었어요. 같은 과일인지 확인하고 있어요."
   );
   drawScreen();
 
@@ -80,30 +122,37 @@ function flipCard(index) {
       return;
     }
 
-    updateMessage("같은 과일 페어를 맞췄습니다. 다음 카드를 이어서 찾아보세요.");
+    updateMessage("같은 과일 짝을 찾았어요. 다음 카드를 이어서 찾아보세요.");
     drawScreen();
     return;
   }
 
-  updateMessage("서로 다른 과일 카드입니다. 잠시 후 다시 뒤집힙니다.");
-
-  resetTimerId = window.setTimeout(() => {
-    resetOpenCards();
-  }, FLIP_BACK_DELAY);
+  updateMessage("서로 다른 과일 카드예요. 잠시 뒤 다시 뒤집혀요.");
+  resetTimerId = window.setTimeout(resetOpenCards, FLIP_BACK_DELAY);
 }
 
 function startGame() {
-  if (resetTimerId) {
-    window.clearTimeout(resetTimerId);
-    resetTimerId = null;
-  }
+  stopTimers();
 
   state.cards = createDeck(FRUITS, shuffle);
   state.flippedIndexes = [];
   state.matchedPairs = 0;
   state.attemptCount = 0;
   state.isBoardLocked = false;
-  updateMessage("첫 번째 카드를 뒤집어 같은 과일의 위치를 찾아보세요.");
+  state.timeRemaining = GAME_DURATION_SECONDS;
+  updateMessage("첫 번째 카드를 뒤집고 같은 과일이 어디 있는지 찾아보세요.");
+
+  state.timerId = window.setInterval(() => {
+    state.timeRemaining -= 1;
+
+    if (state.timeRemaining <= 0) {
+      gameOver();
+      return;
+    }
+
+    updateGuideDisplay();
+  }, 1000);
+
   drawScreen();
 }
 

@@ -54,7 +54,7 @@ body::after {
 }
 
 .app-shell {
-  width: min(1120px, calc(100% - 32px));
+  width: min(1240px, calc(100% - 32px));
   margin: 0 auto;
   min-height: 100vh;
   display: grid;
@@ -220,9 +220,9 @@ h1 {
 }
 
 .board-frame {
-  width: min(100%, 500px);
+  width: min(100%, 680px);
   aspect-ratio: 1;
-  padding: 16px;
+  padding: 18px;
   border-radius: 30px;
   background: linear-gradient(160deg, rgba(27, 51, 77, 0.96), rgba(16, 35, 56, 0.98));
 }
@@ -230,18 +230,19 @@ h1 {
 .game-board {
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(var(--board-columns, 6), 1fr);
   gap: 10px;
 }
 
 .card {
   position: relative;
   border: 0;
-  border-radius: 22px;
+  border-radius: 18px;
   background: transparent;
   cursor: pointer;
   padding: 0;
   isolation: isolate;
+  aspect-ratio: 1;
 }
 
 .card-face {
@@ -249,7 +250,7 @@ h1 {
   inset: 0;
   display: grid;
   place-items: center;
-  border-radius: 22px;
+  border-radius: 18px;
   transition: opacity 0.22s ease, transform 0.22s ease, box-shadow 0.2s ease;
   will-change: opacity, transform;
 }
@@ -265,14 +266,14 @@ h1 {
   background: var(--card-front);
   opacity: 0;
   transform: scale(0.96);
-  padding: 12%;
+  padding: 14%;
 }
 
 .card-back {
   background: linear-gradient(145deg, var(--card-back-a), var(--card-back-b));
   color: rgba(255, 255, 255, 0.86);
   font-family: "Black Han Sans", sans-serif;
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 1.7vw, 1.4rem);
   letter-spacing: 0.08em;
   opacity: 1;
   transform: scale(1);
@@ -339,6 +340,10 @@ h1 {
   .board-panel {
     padding: 24px;
   }
+
+  .board-frame {
+    width: min(100%, 620px);
+  }
 }
 
 @media (max-width: 540px) {
@@ -356,14 +361,28 @@ h1 {
   }
 
   .board-frame {
-    padding: 12px;
+    width: min(100%, 100vw - 18px);
+    padding: 10px;
   }
 
   .game-board {
-    gap: 8px;
+    gap: 6px;
   }
 
   .info-grid {
     grid-template-columns: 1fr;
+  }
+
+  .card,
+  .card-face {
+    border-radius: 14px;
+  }
+
+  .card-front {
+    padding: 16%;
+  }
+
+  .card-back {
+    font-size: 0.95rem;
   }
 }

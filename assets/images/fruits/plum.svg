@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="자두">
+  <rect width="128" height="128" rx="28" fill="#fff7ef"/>
+  <path d="M66 27c7-8 17-12 28-9-3 9-11 15-22 16-3 0-5-2-6-7Z" fill="#61a95d"/>
+  <path d="M64 35c-22 0-39 16-39 37 0 25 19 44 39 44s39-19 39-44c0-21-17-37-39-37Z" fill="#8c4aa8"/>
+  <ellipse cx="48" cy="58" rx="11" ry="20" fill="#bf8ad1" opacity=".45" transform="rotate(18 48 58)"/>
+</svg>

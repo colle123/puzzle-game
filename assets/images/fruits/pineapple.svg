@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="파인애플">
+  <rect width="128" height="128" rx="28" fill="#fff7ef"/>
+  <path d="M64 16 78 34 64 30 50 34 64 16Z" fill="#4e9d57"/>
+  <path d="m50 22 14 14-20 0 6-14Zm28 0 6 14-20 0 14-14Z" fill="#66b760"/>
+  <path d="M62 34c18 0 34 12 34 34 0 28-17 48-32 48S32 96 32 68c0-22 12-34 30-34Z" fill="#efbd43"/>
+  <path d="M42 50 86 94M86 50 42 94M34 66h60M38 82h52" stroke="#cc9430" stroke-width="6" stroke-linecap="round"/>
+</svg>

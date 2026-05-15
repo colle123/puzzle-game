@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>과일 짝맞추기 퍼즐</title>
+  <title>과일 짝 맞추기 퍼즐 게임</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,10 +14,10 @@
   <main class="app-shell">
     <section class="hero-panel">
       <p class="eyebrow">FRUIT PUZZLE</p>
-      <h1>과일 짝맞추기<br>퍼즐 게임</h1>
+      <h1>과일 짝 맞추기<br>퍼즐 게임</h1>
       <p class="description">
-        카드를 두 장씩 뒤집어 같은 과일을 찾는 4x4 퍼즐 게임입니다.
-        모든 짝을 맞추면 클리어됩니다.
+        카드를 두 장씩 뒤집으며 같은 과일을 찾는 6x6 퍼즐 게임입니다.
+        제한 시간 안에 모든 짝을 맞추면 클리어예요.
       </p>
 
       <div class="status-grid">
@@ -27,7 +27,7 @@
         </article>
         <article class="status-card">
           <span class="status-label">완료한 짝</span>
-          <strong id="match-count">0 / 8</strong>
+          <strong id="match-count">0 / 18</strong>
         </article>
         <article class="status-card">
           <span class="status-label">게임 상태</span>
@@ -35,23 +35,27 @@
         </article>
       </div>
 
-      <section class="info-panel" aria-label="게임 안내 패널">
+      <section class="info-panel" aria-label="게임 안내">
         <div class="info-panel-header">
           <strong>게임 진행 안내</strong>
-          <span class="info-badge">플레이 도움말</span>
+          <span class="info-badge">기억력 연습</span>
         </div>
         <div class="info-grid">
           <article class="info-card">
             <span class="info-label">현재 목표</span>
-            <p id="current-goal" class="info-text">같은 과일 카드 두 장 찾기</p>
+            <p id="current-goal" class="info-text">같은 과일 카드 짝 찾기</p>
           </article>
           <article class="info-card">
             <span class="info-label">진행 상황</span>
-            <p id="progress-summary" class="info-text">첫 카드를 골라 시작하세요.</p>
+            <p id="progress-summary" class="info-text">첫 카드를 골라 게임을 시작해 보세요.</p>
           </article>
           <article class="info-card">
             <span class="info-label">플레이 팁</span>
-            <p id="play-tip" class="info-text">본 카드 위치를 기억해 보세요.</p>
+            <p id="play-tip" class="info-text">뒤집은 카드의 위치를 함께 기억해 보세요.</p>
+          </article>
+          <article class="info-card">
+            <span class="info-label">남은 시간</span>
+            <p id="timer" class="info-text">02:00</p>
           </article>
         </div>
       </section>
@@ -63,10 +67,10 @@
 
     <section class="board-panel">
       <div class="board-frame">
-        <div id="game-board" class="game-board" aria-label="과일 카드 매칭 보드"></div>
+        <div id="game-board" class="game-board" aria-label="과일 카드 게임 보드"></div>
       </div>
       <p id="message" class="message" aria-live="polite">
-        첫 번째 카드를 뒤집어 같은 과일의 위치를 찾아보세요.
+        첫 번째 카드를 뒤집고 같은 과일이 어디 있는지 찾아보세요.
       </p>
     </section>
   </main>

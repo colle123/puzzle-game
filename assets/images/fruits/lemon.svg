@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="레몬">
+  <rect width="128" height="128" rx="28" fill="#fff7ef"/>
+  <path d="M26 67c0-18 18-34 42-34s34 8 44 22c5 7 6 15 2 23-7 15-25 25-47 25-26 0-41-16-41-36Z" fill="#f7d84e"/>
+  <path d="M84 30c8-8 20-9 29-4-5 10-16 15-27 13-2-2-2-5-2-9Z" fill="#7fbe5d"/>
+  <ellipse cx="52" cy="60" rx="12" ry="20" fill="#fff1a8" opacity=".55" transform="rotate(20 52 60)"/>
+</svg>

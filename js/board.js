@@ -5,9 +5,11 @@ const gameStatusElement = document.getElementById("game-status");
 const currentGoalElement = document.getElementById("current-goal");
 const progressSummaryElement = document.getElementById("progress-summary");
 const playTipElement = document.getElementById("play-tip");
+const timerElement = document.getElementById("timer");
 
-export function renderBoard(state, totalPairs, onFlipCard) {
+export function renderBoard(state, totalPairs, boardColumns, onFlipCard) {
   boardElement.innerHTML = "";
+  boardElement.style.setProperty("--board-columns", String(boardColumns));
 
   state.cards.forEach((card, index) => {
     const button = document.createElement("button");
@@ -25,7 +27,7 @@ export function renderBoard(state, totalPairs, onFlipCard) {
       button.classList.add("is-matched");
     }
 
-    button.disabled = state.isBoardLocked || isFlipped || card.matched;
+    button.disabled = state.isBoardLocked || isFlipped || card.matched || state.timeRemaining <= 0;
     button.addEventListener("click", () => onFlipCard(index));
 
     const front = document.createElement("span");
@@ -39,7 +41,7 @@ export function renderBoard(state, totalPairs, onFlipCard) {
 
     const back = document.createElement("span");
     back.className = "card-face card-back";
-    back.textContent = "뒤집기";
+    back.textContent = "?";
 
     button.append(front, back);
     boardElement.appendChild(button);
@@ -47,11 +49,15 @@ export function renderBoard(state, totalPairs, onFlipCard) {
 
   attemptCountElement.textContent = String(state.attemptCount);
   matchCountElement.textContent = `${state.matchedPairs} / ${totalPairs}`;
-  gameStatusElement.textContent = state.matchedPairs === totalPairs ? "클리어" : "진행 중";
+  gameStatusElement.textContent = state.matchedPairs === totalPairs ? "클리어" : state.timeRemaining <= 0 ? "시간 종료" : "진행 중";
 }
 
-export function updateGuide(goalText, progressText, tipText) {
+export function updateGuide(goalText, progressText, tipText, timeText) {
   currentGoalElement.textContent = goalText;
   progressSummaryElement.textContent = progressText;
   playTipElement.textContent = tipText;
+
+  if (timerElement) {
+    timerElement.textContent = timeText;
+  }
 }

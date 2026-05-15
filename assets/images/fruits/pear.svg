@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="배">
+  <rect width="128" height="128" rx="28" fill="#fff7ef"/>
+  <path d="M69 21c1-8 7-14 15-16 0 9-3 16-10 19-3 1-5 0-5-3Z" fill="#6e4926"/>
+  <path d="M71 25c8-8 18-10 28-6-4 8-12 12-22 12-3 0-5-2-6-6Z" fill="#5ea55d"/>
+  <path d="M63 34c15 0 28 12 28 26 0 7-3 13-7 18 10 6 16 16 16 27 0 18-16 30-36 30S28 123 28 105c0-11 7-21 17-27-4-5-7-11-7-18 0-14 11-26 25-26Z" fill="#c8d86a"/>
+  <ellipse cx="52" cy="63" rx="11" ry="18" fill="#edf4a2" opacity=".5" transform="rotate(18 52 63)"/>
+</svg>

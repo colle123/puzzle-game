@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="복숭아">
+  <rect width="128" height="128" rx="28" fill="#fff7ef"/>
+  <path d="M66 28c8-10 20-13 31-9-3 10-13 17-24 17-4 0-6-2-7-8Z" fill="#70b85d"/>
+  <path d="M65 34c-20-7-42 7-47 28-8 31 14 54 44 54s53-23 45-54c-5-21-27-35-42-28Z" fill="#f79a7d"/>
+  <path d="M65 34c-8 7-12 20-12 37 0 20 4 34 12 43 8-9 12-23 12-43 0-17-4-30-12-37Z" fill="#e56f61" opacity=".55"/>
+  <ellipse cx="46" cy="58" rx="10" ry="18" fill="#ffd7bd" opacity=".45" transform="rotate(20 46 58)"/>
+</svg>

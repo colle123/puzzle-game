@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="코코넛">
+  <rect width="128" height="128" rx="28" fill="#fff7ef"/>
+  <path d="M66 22c7-7 17-10 27-7-3 9-11 15-22 16-2 0-4-2-5-9Z" fill="#61a95f"/>
+  <path d="M64 38c24 0 40 18 40 40s-16 38-40 38S24 100 24 78s16-40 40-40Z" fill="#7a4f35"/>
+  <path d="M64 42c18 0 30 15 30 33S82 108 64 108 34 93 34 75s12-33 30-33Z" fill="#fff5df"/>
+  <circle cx="53" cy="74" r="4" fill="#7a4f35"/>
+  <circle cx="64" cy="66" r="4" fill="#7a4f35"/>
+  <circle cx="75" cy="74" r="4" fill="#7a4f35"/>
+</svg>

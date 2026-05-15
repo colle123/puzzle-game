@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="라즈베리">
+  <rect width="128" height="128" rx="28" fill="#fff7ef"/>
+  <path d="M64 25c8-8 18-10 28-6-4 8-12 13-23 13-2 0-4-2-5-7Z" fill="#59a65d"/>
+  <g fill="#d9446f">
+    <circle cx="48" cy="54" r="12"/>
+    <circle cx="64" cy="50" r="12"/>
+    <circle cx="80" cy="54" r="12"/>
+    <circle cx="44" cy="70" r="12"/>
+    <circle cx="60" cy="68" r="12"/>
+    <circle cx="76" cy="70" r="12"/>
+    <circle cx="52" cy="84" r="12"/>
+    <circle cx="68" cy="84" r="12"/>
+  </g>
+  <circle cx="64" cy="50" r="4" fill="#f48fb0"/>
+</svg>
